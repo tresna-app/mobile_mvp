@@ -29,10 +29,11 @@ class SignInPage extends StatelessWidget {
             currState is NextTabBarPageState ||
             currState is ErrorState,
         listener: (context, state) {
-          if (state is NextForgotPasswordPageState) {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (_) => ForgotPasswordPage()));
-          } else if (state is NextSignUpPageState) {
+          // if (state is NextForgotPasswordPageState) {
+          //   Navigator.of(context)
+          //       .push(MaterialPageRoute(builder: (_) => ForgotPasswordPage()));
+          // } else
+          if (state is NextSignUpPageState) {
             Navigator.pushReplacement(
                 context, MaterialPageRoute(builder: (_) => SignUpPage()));
           } else if (state is NextTabBarPageState) {

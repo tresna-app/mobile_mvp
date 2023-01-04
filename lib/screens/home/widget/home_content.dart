@@ -61,27 +61,27 @@ class HomeContent extends StatelessWidget {
         Container(
           height: 160,
           child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: [
-              const SizedBox(width: 20),
-              WorkoutCard(
-                  color: ColorConstants.cardioColor,
-                  workout: DataConstants.homeWorkouts[0],
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                      builder: (_) => WorkoutDetailsPage(
-                            workout: DataConstants.workouts[0],
-                          )))),
-              const SizedBox(width: 15),
-              WorkoutCard(
-                  color: ColorConstants.armsColor,
-                  workout: DataConstants.homeWorkouts[1],
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                      builder: (_) => WorkoutDetailsPage(
-                            workout: DataConstants.workouts[2],
-                          )))),
-              const SizedBox(width: 20),
-            ],
-          ),
+              // scrollDirection: Axis.horizontal,
+              // children: [
+              //   const SizedBox(width: 20),
+              //   WorkoutCard(
+              //       color: ColorConstants.cardioColor,
+              //       workout: DataConstants.homeWorkouts[0],
+              //       onTap: () => Navigator.of(context).push(MaterialPageRoute(
+              //           builder: (_) => WorkoutDetailsPage(
+              //                 workout: DataConstants.workouts[0],
+              //               )))),
+              //   const SizedBox(width: 15),
+              //   WorkoutCard(
+              //       color: ColorConstants.armsColor,
+              //       workout: DataConstants.homeWorkouts[1],
+              //       onTap: () => Navigator.of(context).push(MaterialPageRoute(
+              //           builder: (_) => WorkoutDetailsPage(
+              //                 workout: DataConstants.workouts[2],
+              //               )))),
+              //   const SizedBox(width: 20),
+              // ],
+              ),
         ),
       ],
     );
@@ -135,9 +135,9 @@ class HomeContent extends StatelessWidget {
                                 height: 120)),
                         radius: 25),
                 onTap: () async {
-                  await Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => EditAccountScreen()));
-                  BlocProvider.of<HomeBloc>(context).add(ReloadImageEvent());
+                  // await Navigator.of(context).push(
+                  //     MaterialPageRoute(builder: (_) => EditAccountScreen()));
+                  // BlocProvider.of<HomeBloc>(context).add(ReloadImageEvent());
                 },
               );
             },

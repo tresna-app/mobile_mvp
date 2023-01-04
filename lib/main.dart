@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_mvp/core/const/color_constants.dart';
+import 'package:mobile_mvp/firebase_options.dart';
 import 'package:mobile_mvp/screens/onboarding/page/onboarding_page.dart';
 import 'package:mobile_mvp/screens/tab_bar/page/tab_bar_page.dart';
 
@@ -12,7 +13,9 @@ void main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.android,
+  );
   runApp(MyApp());
 }
 
