@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "882835054676",
+    "project_id": "tresna-d01a0",
+    "storage_bucket": "tresna-d01a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882835054676:android:302ddddb5d3fcbbc0ccdc1",
+        "android_client_info": {
+          "package_name": "com.example.mobile_mvp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882835054676-5dibgb9vj4p5cq7colqe8l53g6n1lk05.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDC5Nnzrk8_zBJtsZeVOYg7oJeJQs7WWc0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882835054676-5dibgb9vj4p5cq7colqe8l53g6n1lk05.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
