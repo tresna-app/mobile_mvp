@@ -66,7 +66,7 @@ class OnboardingContent extends StatelessWidget {
                 tween: Tween<double>(begin: 0, end: percent),
                 duration: Duration(seconds: 1),
                 builder: (context, value, _) => CircularPercentIndicator(
-                      radius: 110,
+                      radius: 50,
                       backgroundColor: ColorConstants.primaryColor,
                       progressColor: Colors.white,
                       percent: 1 - value,
