@@ -5,8 +5,10 @@ import 'package:mobile_mvp/core/const/color_constants.dart';
 import 'package:mobile_mvp/core/const/data_constants.dart';
 import 'package:mobile_mvp/core/const/path_constants.dart';
 import 'package:mobile_mvp/core/const/text_constants.dart';
+import 'package:mobile_mvp/screens/edit_account/edit_account_screen.dart';
 import 'package:mobile_mvp/screens/home/bloc/home_bloc.dart';
 import 'package:mobile_mvp/screens/home/widget/home_statistics.dart';
+import 'package:mobile_mvp/screens/workout_details_screen/page/workout_details_page.dart';
 
 import 'home_exercises_card.dart';
 
@@ -61,27 +63,27 @@ class HomeContent extends StatelessWidget {
         Container(
           height: 160,
           child: ListView(
-              // scrollDirection: Axis.horizontal,
-              // children: [
-              //   const SizedBox(width: 20),
-              //   WorkoutCard(
-              //       color: ColorConstants.cardioColor,
-              //       workout: DataConstants.homeWorkouts[0],
-              //       onTap: () => Navigator.of(context).push(MaterialPageRoute(
-              //           builder: (_) => WorkoutDetailsPage(
-              //                 workout: DataConstants.workouts[0],
-              //               )))),
-              //   const SizedBox(width: 15),
-              //   WorkoutCard(
-              //       color: ColorConstants.armsColor,
-              //       workout: DataConstants.homeWorkouts[1],
-              //       onTap: () => Navigator.of(context).push(MaterialPageRoute(
-              //           builder: (_) => WorkoutDetailsPage(
-              //                 workout: DataConstants.workouts[2],
-              //               )))),
-              //   const SizedBox(width: 20),
-              // ],
-              ),
+            scrollDirection: Axis.horizontal,
+            children: [
+              const SizedBox(width: 20),
+              WorkoutCard(
+                  color: ColorConstants.cardioColor,
+                  workout: DataConstants.homeWorkouts[0],
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => WorkoutDetailsPage(
+                            workout: DataConstants.workouts[0],
+                          )))),
+              const SizedBox(width: 15),
+              WorkoutCard(
+                  color: ColorConstants.armsColor,
+                  workout: DataConstants.homeWorkouts[1],
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => WorkoutDetailsPage(
+                            workout: DataConstants.workouts[2],
+                          )))),
+              const SizedBox(width: 20),
+            ],
+          ),
         ),
       ],
     );
@@ -135,9 +137,9 @@ class HomeContent extends StatelessWidget {
                                 height: 120)),
                         radius: 25),
                 onTap: () async {
-                  // await Navigator.of(context).push(
-                  //     MaterialPageRoute(builder: (_) => EditAccountScreen()));
-                  // BlocProvider.of<HomeBloc>(context).add(ReloadImageEvent());
+                  await Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => EditAccountScreen()));
+                  BlocProvider.of<HomeBloc>(context).add(ReloadImageEvent());
                 },
               );
             },

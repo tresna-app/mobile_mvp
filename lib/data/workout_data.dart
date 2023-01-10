@@ -1,4 +1,4 @@
-import 'package:mobile_mvp/core/data/exercise_data.dart';
+import 'package:mobile_mvp/data/exercise_data.dart';
 
 class WorkoutData {
   final String title;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_mvp/core/const/color_constants.dart';
-import 'package:mobile_mvp/core/data/workout_data.dart';
+import 'package:mobile_mvp/data/workout_data.dart';
 
 class WorkoutCard extends StatelessWidget {
   final Color color;

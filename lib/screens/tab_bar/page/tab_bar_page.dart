@@ -3,8 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_mvp/core/const/color_constants.dart';
 import 'package:mobile_mvp/core/const/path_constants.dart';
 import 'package:mobile_mvp/core/const/text_constants.dart';
+import 'package:mobile_mvp/core/service/auth_service.dart';
 import 'package:mobile_mvp/screens/home/page/home_page.dart';
+import 'package:mobile_mvp/screens/settings/settings_screen.dart';
+import 'package:mobile_mvp/screens/sign_in/page/sign_in_page.dart';
 import 'package:mobile_mvp/screens/tab_bar/bloc/tab_bar_bloc.dart';
+import 'package:mobile_mvp/screens/workouts/page/workouts_page.dart';
 
 class TabBarPage extends StatelessWidget {
   const TabBarPage({Key? key}) : super(key: key);
@@ -64,31 +68,29 @@ class TabBarPage extends StatelessWidget {
 
   Widget _createBody(BuildContext context, int index) {
     final children = [
-      HomePage()
-      // ,
-      // WorkoutsPage(),
-      // SettingsScreen()
-
-      // Scaffold(
-      //   body: Center(
-      //     child: RawMaterialButton(
-      //       fillColor: Colors.red,
-      //       child: Text(
-      //         TextConstants.signOut,
-      //         style: TextStyle(
-      //           color: ColorConstants.white,
-      //         ),
-      //       ),
-      //       onPressed: () {
-      //         AuthService.signOut();
-      //         Navigator.pushReplacement(
-      //           context,
-      //           MaterialPageRoute(builder: (_) => SignInPage()),
-      //         );
-      //       },
-      //     ),
-      //   ),
-      // ),
+      HomePage(),
+      WorkoutsPage(),
+      SettingsScreen(),
+      Scaffold(
+        body: Center(
+          child: RawMaterialButton(
+            fillColor: Colors.red,
+            child: Text(
+              TextConstants.signOut,
+              style: TextStyle(
+                color: ColorConstants.white,
+              ),
+            ),
+            onPressed: () {
+              AuthService.signOut();
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => SignInPage()),
+              );
+            },
+          ),
+        ),
+      ),
     ];
     return children[index];
   }
