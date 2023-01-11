@@ -8,19 +8,22 @@ class DataConstants {
   // Onboarding
   static final onboardingTiles = [
     OnboardingTile(
-      title: TextConstants.onboarding1Title,
-      mainText: TextConstants.onboarding1Description,
+      logoPath: PathConstants.tresnaPurpleLogo,
       imagePath: PathConstants.onboarding1,
+      title: TextConstants.onboardingTitle,
+      mainText: TextConstants.onboarding1Description,
     ),
     OnboardingTile(
-      title: TextConstants.onboarding2Title,
-      mainText: TextConstants.onboarding2Description,
+      logoPath: PathConstants.tresnaPurpleLogo,
       imagePath: PathConstants.onboarding2,
+      title: TextConstants.onboardingTitle,
+      mainText: TextConstants.onboarding2Description,
     ),
     OnboardingTile(
-      title: TextConstants.onboarding3Title,
-      mainText: TextConstants.onboarding3Description,
+      logoPath: PathConstants.tresnaPurpleLogo,
       imagePath: PathConstants.onboarding3,
+      title: TextConstants.onboardingTitle,
+      mainText: TextConstants.onboarding3Description,
     ),
   ];
 

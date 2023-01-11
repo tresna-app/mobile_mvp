@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_mvp/core/const/color_constants.dart';
 import 'package:mobile_mvp/core/const/data_constants.dart';
+import 'package:mobile_mvp/core/const/path_constants.dart';
 import 'package:mobile_mvp/screens/onboarding/bloc/onboarding_bloc.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
@@ -11,18 +12,26 @@ class OnboardingContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<OnboardingBloc>(context);
     return SafeArea(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(
-            flex: 4,
-            child: _createPageView(bloc.pageController, bloc),
-          ),
-          Expanded(
-            flex: 2,
-            child: _createStatic(bloc),
-          ),
-        ],
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage(PathConstants.vector),
+              alignment: Alignment.topCenter),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              flex:
+                  5, // Flex adds more rows and change the size of each component
+              child: _createPageView(bloc.pageController, bloc),
+            ),
+            Expanded(
+              flex: 2,
+              child: _createStatic(bloc),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -64,9 +73,9 @@ class OnboardingContent extends StatelessWidget {
             final percent = _getPercent(bloc.pageIndex);
             return TweenAnimationBuilder<double>(
                 tween: Tween<double>(begin: 0, end: percent),
-                duration: Duration(seconds: 1),
+                duration: Duration(milliseconds: 750),
                 builder: (context, value, _) => CircularPercentIndicator(
-                      radius: 50,
+                      radius: 35,
                       backgroundColor: ColorConstants.primaryColor,
                       progressColor: Colors.white,
                       percent: 1 - value,
@@ -79,10 +88,10 @@ class OnboardingContent extends StatelessWidget {
                             bloc.add(PageChangedEvent());
                           },
                           child: Padding(
-                            padding: const EdgeInsets.all(24.0),
+                            padding: const EdgeInsets.all(16.0),
                             child: Icon(
                               Icons.east_rounded,
-                              size: 38.0,
+                              size: 24.0,
                               color: Colors.white,
                             ),
                           ),

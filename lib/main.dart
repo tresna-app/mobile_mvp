@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme:
             TextTheme(bodyText1: TextStyle(color: ColorConstants.textColor)),
-        fontFamily: 'NotoSansKR',
+        fontFamily: 'Poppins',
         scaffoldBackgroundColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

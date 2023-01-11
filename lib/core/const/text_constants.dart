@@ -3,16 +3,14 @@ class TextConstants {
   static const String start = "Start";
 
   // Onboarding
-  static const String onboarding1Title = "Workout anywhere";
-  static const String onboarding2Title = "Learn techniques";
-  static const String onboarding3Title = "Stay strong & healthy";
+  static const String onboardingTitle = "Welcome to Tresna";
 
   static const String onboarding1Description =
-      "You can do your workout at home without any equipment, outside or at the gym.";
+      "This is the beginning of your self-care journey.";
   static const String onboarding2Description =
-      "Our workout programs are made by professionals.";
+      "Create new routines. It`s your turn to take care of you.";
   static const String onboarding3Description =
-      "We want you to fully enjoy the program and stay healthy and positive.";
+      "Connect with people going through similar life challenges.";
 
   // Sign Up
   static const String signUp = "Sign up";
