@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ColorConstants {
+  // Tresna color palette
+  // https://colorhunt.co/palette/b1b2ffaac4ffd2daffeef1ff
+  static const primary = Color.fromARGB(255, 177, 178, 255);
+  static const secondary = Color.fromARGB(255, 170, 196, 255);
+  static const tertiary = Color.fromARGB(255, 210, 218, 255);
+  static const quaternary = Color.fromARGB(255, 238, 241, 255);
+
   static const textColor = Color(0xFF1F2022);
   static const primaryColor = Color(0xFF6358E1);
 

@@ -1,9 +1,11 @@
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_mvp/core/const/color_constants.dart';
 import 'package:mobile_mvp/core/const/data_constants.dart';
 import 'package:mobile_mvp/core/const/path_constants.dart';
+import 'package:mobile_mvp/core/const/text_constants.dart';
 import 'package:mobile_mvp/screens/onboarding/bloc/onboarding_bloc.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
@@ -13,7 +15,7 @@ class OnboardingContent extends StatelessWidget {
     final bloc = BlocProvider.of<OnboardingBloc>(context);
     return SafeArea(
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage(PathConstants.vector),
               alignment: Alignment.topCenter),
@@ -50,7 +52,7 @@ class OnboardingContent extends StatelessWidget {
   Widget _createStatic(OnboardingBloc bloc) {
     return Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         BlocBuilder<OnboardingBloc, OnboardingState>(
@@ -59,36 +61,36 @@ class OnboardingContent extends StatelessWidget {
             return DotsIndicator(
               dotsCount: 3,
               position: bloc.pageIndex.toDouble(),
-              decorator: DotsDecorator(
+              decorator: const DotsDecorator(
                 color: Colors.grey,
                 activeColor: ColorConstants.primaryColor,
               ),
             );
           },
         ),
-        Spacer(),
+        const Spacer(),
         BlocBuilder<OnboardingBloc, OnboardingState>(
           buildWhen: (_, currState) => currState is PageChangedState,
           builder: (context, state) {
             final percent = _getPercent(bloc.pageIndex);
             return TweenAnimationBuilder<double>(
                 tween: Tween<double>(begin: 0, end: percent),
-                duration: Duration(milliseconds: 750),
+                duration: const Duration(milliseconds: 750),
                 builder: (context, value, _) => CircularPercentIndicator(
                       radius: 35,
-                      backgroundColor: ColorConstants.primaryColor,
+                      backgroundColor: ColorConstants.primary,
                       progressColor: Colors.white,
                       percent: 1 - value,
                       center: Material(
-                        shape: CircleBorder(),
-                        color: ColorConstants.primaryColor,
+                        shape: const CircleBorder(),
+                        color: ColorConstants.primary,
                         child: RawMaterialButton(
-                          shape: CircleBorder(),
+                          shape: const CircleBorder(),
                           onPressed: () {
                             bloc.add(PageChangedEvent());
                           },
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
+                          child: const Padding(
+                            padding: EdgeInsets.all(16.0),
                             child: Icon(
                               Icons.east_rounded,
                               size: 24.0,
@@ -100,7 +102,31 @@ class OnboardingContent extends StatelessWidget {
                     ));
           },
         ),
-        SizedBox(height: 30),
+        const SizedBox(height: 20),
+        RichText(
+          text: TextSpan(
+            text: TextConstants.alreadyHaveAccount,
+            style: const TextStyle(
+              color: ColorConstants.textBlack,
+              fontSize: 16,
+              fontWeight: FontWeight.w300, // Light
+            ),
+            children: [
+              TextSpan(
+                text: " ${TextConstants.signIn}",
+                style: const TextStyle(
+                  color: ColorConstants.primaryColor,
+                  fontSize: 16,
+                ),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    bloc.add(SignInTappedEvent());
+                  },
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 10),
       ],
     );
   }

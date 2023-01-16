@@ -6,11 +6,11 @@ class TextConstants {
   static const String onboardingTitle = "Welcome to Tresna";
 
   static const String onboarding1Description =
-      "This is the beginning of your self-care journey.";
+      "This is the beginning of \nyour self-care journey.";
   static const String onboarding2Description =
-      "Create new routines. It`s your turn to take care of you.";
+      "Create new routines. \nIt`s your turn to \ntake care of you.";
   static const String onboarding3Description =
-      "Connect with people going through similar life challenges.";
+      "Connect with people going \nthrough similar life challenges.";
 
   // Sign Up
   static const String signUp = "Sign up";

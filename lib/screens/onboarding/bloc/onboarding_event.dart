@@ -10,3 +10,5 @@ class PageSwipedEvent extends OnboardingEvent {
 
   PageSwipedEvent({required this.index});
 }
+
+class SignInTappedEvent extends OnboardingEvent {}

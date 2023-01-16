@@ -122,16 +122,13 @@ flutter:
       fonts:
         - asset: assets/fonts/NotoSansKR/NotoSansKR-Regular.otf
         - asset: assets/fonts/NotoSansKR/NotoSansKR-Medium.otf
-          weight: 500
         - asset: assets/fonts/NotoSansKR/NotoSansKR-Bold.otf
-          weight: 700
     - family: Poppins
       fonts:
+        - asset: assets/fonts/Poppins/Poppins-Light.ttf
         - asset: assets/fonts/Poppins/Poppins-Regular.ttf
-        - asset: assets/fonts/Poppins/Poppins-Medium.otf
-          weight: 500
-        - asset: assets/fonts/Poppins/Poppins-Bold.otf
-          weight: 700
+        - asset: assets/fonts/Poppins/Poppins-Medium.ttf
+        - asset: assets/fonts/Poppins/Poppins-Bold.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

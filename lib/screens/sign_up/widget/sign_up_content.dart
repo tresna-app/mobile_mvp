@@ -34,9 +34,9 @@ class SignUpContent extends StatelessWidget {
                   return _createLoading();
                 } else if (state is NextTabBarPageState ||
                     state is ErrorState) {
-                  return SizedBox();
+                  return const SizedBox();
                 }
-                return SizedBox();
+                return const SizedBox();
               },
             ),
           ],
@@ -71,7 +71,7 @@ class SignUpContent extends StatelessWidget {
   }
 
   Widget _createTitle() {
-    return Text(
+    return const Text(
       TextConstants.signUp,
       style: TextStyle(
         color: ColorConstants.textBlack,
@@ -181,14 +181,14 @@ class SignUpContent extends StatelessWidget {
     return RichText(
       text: TextSpan(
         text: TextConstants.alreadyHaveAccount,
-        style: TextStyle(
+        style: const TextStyle(
           color: ColorConstants.textBlack,
           fontSize: 18,
         ),
         children: [
           TextSpan(
             text: " ${TextConstants.signIn}",
-            style: TextStyle(
+            style: const TextStyle(
               color: ColorConstants.primaryColor,
               fontSize: 18,
               fontWeight: FontWeight.bold,
