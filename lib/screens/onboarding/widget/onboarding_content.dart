@@ -62,8 +62,8 @@ class OnboardingContent extends StatelessWidget {
               dotsCount: 3,
               position: bloc.pageIndex.toDouble(),
               decorator: const DotsDecorator(
-                color: Colors.grey,
-                activeColor: ColorConstants.primaryColor,
+                color: ColorConstants.onboardingDotColor,
+                activeColor: ColorConstants.figmaPrimary,
               ),
             );
           },

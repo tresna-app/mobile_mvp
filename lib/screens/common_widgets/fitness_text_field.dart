@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:mobile_mvp/core/const/color_constants.dart';
 import 'package:mobile_mvp/core/const/path_constants.dart';
 
@@ -70,8 +69,8 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _createHeader(),
-          const SizedBox(height: 5),
+          // _createHeader(),
+          // const SizedBox(height: 5),
           _createTextFieldStack(),
           if (stateIsError) ...[
             _createError(),
@@ -100,7 +99,7 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
     } else if (widget.controller.text.isNotEmpty) {
       return ColorConstants.textBlack;
     }
-    return ColorConstants.grey;
+    return ColorConstants.signUpGrey;
   }
 
   Widget _createTextFieldStack() {
@@ -126,7 +125,7 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
       obscureText: stateObscureText,
       textInputAction: widget.textInputAction,
       keyboardType: widget.keyboardType,
-      style: TextStyle(
+      style: const TextStyle(
         color: ColorConstants.textBlack,
         fontSize: 16,
       ),
@@ -141,14 +140,14 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: ColorConstants.primaryColor,
           ),
         ),
         hintText: widget.placeholder,
-        hintStyle: TextStyle(
-          color: ColorConstants.grey,
-          fontSize: 16,
+        hintStyle: const TextStyle(
+          color: ColorConstants.signUpGrey,
+          fontSize: 14,
         ),
         filled: true,
         fillColor: ColorConstants.textFieldBackground,
@@ -168,7 +167,7 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
         });
       },
       child: Image(
-        image: AssetImage(
+        image: const AssetImage(
           PathConstants.eye,
         ),
         color: widget.controller.text.isNotEmpty
@@ -183,7 +182,7 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
       padding: const EdgeInsets.only(top: 2),
       child: Text(
         widget.errorText,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 14,
           color: ColorConstants.errorColor,
         ),

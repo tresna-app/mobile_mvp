@@ -10,6 +10,8 @@ class PathConstants {
 
   // Auth
   static const String eye = 'assets/images/auth/eye_icon.png';
+  static const String signUpBackground =
+      'assets/images/auth/sign_up_background.png';
 
   // Tabbar
   static const String home = 'assets/icons/home/home_icon.png';
@@ -41,7 +43,10 @@ class PathConstants {
   static const String stretching = 'assets/icons/workouts/stretching.png';
 
   //social networks
+  static const String google = 'assets/icons/social_networks/google.png';
   static const String facebook = 'assets/icons/social_networks/facebook.png';
+  static const String facebookWhite =
+      'assets/icons/social_networks/facebook_white.png';
   static const String instagram = 'assets/icons/social_networks/instagram.png';
   static const String twitter = 'assets/icons/social_networks/twitter.png';
 

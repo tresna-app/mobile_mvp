@@ -31,9 +31,9 @@ class SignInContent extends StatelessWidget {
               if (state is LoadingState) {
                 return _createLoading();
               } else if (state is ErrorState || state is NextTabBarPageState) {
-                return SizedBox();
+                return const SizedBox();
               }
-              return SizedBox();
+              return const SizedBox();
             },
           ),
         ],
@@ -58,7 +58,7 @@ class SignInContent extends StatelessWidget {
               _createForgotPasswordButton(context),
               const SizedBox(height: 40),
               _createSignInButton(context),
-              Spacer(),
+              const Spacer(),
               _createDoNotHaveAccountText(context),
               const SizedBox(height: 30),
             ],
@@ -73,7 +73,7 @@ class SignInContent extends StatelessWidget {
   }
 
   Widget _createHeader() {
-    return Center(
+    return const Center(
       child: Text(
         TextConstants.signIn,
         style: TextStyle(
@@ -130,8 +130,8 @@ class SignInContent extends StatelessWidget {
   Widget _createForgotPasswordButton(BuildContext context) {
     final bloc = BlocProvider.of<SignInBloc>(context);
     return GestureDetector(
-      child: Padding(
-        padding: const EdgeInsets.only(left: 21),
+      child: const Padding(
+        padding: EdgeInsets.only(left: 21),
         child: Text(
           TextConstants.forgotPassword,
           style: TextStyle(
@@ -177,14 +177,14 @@ class SignInContent extends StatelessWidget {
       child: RichText(
         text: TextSpan(
           text: TextConstants.doNotHaveAnAccount,
-          style: TextStyle(
+          style: const TextStyle(
             color: ColorConstants.textBlack,
             fontSize: 18,
           ),
           children: [
             TextSpan(
               text: " ${TextConstants.signUp}",
-              style: TextStyle(
+              style: const TextStyle(
                 color: ColorConstants.primaryColor,
                 fontSize: 18,
                 fontWeight: FontWeight.bold,

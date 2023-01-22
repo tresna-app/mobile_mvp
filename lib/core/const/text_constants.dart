@@ -12,6 +12,11 @@ class TextConstants {
   static const String onboarding3Description =
       "Connect with people going \nthrough similar life challenges.";
 
+  // External Logins
+  static const String continueWithFacebook = "CONTINUE WITH FACEBOOK";
+  static const String continueWithGoogle = "CONTINUE WITH GOOGLE";
+  static const String loginWithEmail = "OR LOG IN WITH EMAIL";
+
   // Sign Up
   static const String signUp = "Sign up";
   static const String signIn = "Sign In";
@@ -22,7 +27,7 @@ class TextConstants {
   static const String usernameErrorText = 'Text is required';
 
   static const String email = "Email";
-  static const String emailPlaceholder = "example@mail.com";
+  static const String emailPlaceholder = "Email address";
   static const String emailErrorText =
       'Email is invalid, please enter email properly';
 
@@ -35,7 +40,13 @@ class TextConstants {
   static const String confirmPasswordPlaceholder = "Re-enter password";
   static const String confirmPasswordErrorText = 'Password is not the same';
 
+  static const String createAccount = "Create your account";
   static const String alreadyHaveAccount = "Already have an account?";
+
+  static const String privacyPolicy1 = "I have read the";
+  static const String privacyPolicy2 = " Privacy Policy";
+  static const String privacyPolicyErrorText =
+      'Please confirm that you have read privacy policy';
 
   // Sing In
   static const String passwordPlaceholderSignIn = "Enter your password";

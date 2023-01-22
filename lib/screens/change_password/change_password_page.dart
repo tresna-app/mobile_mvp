@@ -36,15 +36,15 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     return Scaffold(
         body: _buildContext(context),
         appBar: AppBar(
-            title: Text(TextConstants.changePassword,
+            title: const Text(TextConstants.changePassword,
                 style: TextStyle(color: Colors.black, fontSize: 18)),
             backgroundColor: Colors.transparent,
             elevation: 0,
             leading: IconButton(
-              icon: Icon(Icons.arrow_back_ios_new),
+              icon: const Icon(Icons.arrow_back_ios_new),
               onPressed: () => Navigator.of(context).pop(),
             ),
-            iconTheme: IconThemeData(
+            iconTheme: const IconThemeData(
               color: ColorConstants.primaryColor,
             )));
   }
@@ -88,13 +88,13 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     return SafeArea(
       child: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
+          padding: const EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
           child: SizedBox(
             height: height - 140 - MediaQuery.of(context).padding.bottom,
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              SizedBox(height: 15),
-              Text(TextConstants.newPassword,
+              const SizedBox(height: 15),
+              const Text(TextConstants.newPassword,
                   style: TextStyle(fontWeight: FontWeight.w600)),
               SettingsContainer(
                 child: SettingsTextField(
@@ -104,10 +104,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                 ),
               ),
               if (isNewPassInvalid)
-                Text(TextConstants.passwordErrorText,
+                const Text(TextConstants.passwordErrorText,
                     style: TextStyle(color: ColorConstants.errorColor)),
-              SizedBox(height: 10),
-              Text(TextConstants.confirmPassword,
+              const SizedBox(height: 10),
+              const Text(TextConstants.confirmPassword,
                   style: TextStyle(fontWeight: FontWeight.w600)),
               SettingsContainer(
                 child: SettingsTextField(
@@ -117,9 +117,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                 ),
               ),
               if (isConfirmPassInvalid)
-                Text(TextConstants.confirmPasswordErrorText,
+                const Text(TextConstants.confirmPasswordErrorText,
                     style: TextStyle(color: ColorConstants.errorColor)),
-              Spacer(),
+              const Spacer(),
               FitnessButton(
                 title: TextConstants.save,
                 isEnabled: true,
