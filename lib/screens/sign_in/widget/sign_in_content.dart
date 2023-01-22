@@ -3,8 +3,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_mvp/core/const/color_constants.dart';
+import 'package:mobile_mvp/core/const/path_constants.dart';
 import 'package:mobile_mvp/core/const/text_constants.dart';
 import 'package:mobile_mvp/core/service/validation_service.dart';
+import 'package:mobile_mvp/screens/common_widgets/external_login_button.dart';
 import 'package:mobile_mvp/screens/common_widgets/fitness_button.dart';
 import 'package:mobile_mvp/screens/common_widgets/fitness_loading.dart';
 import 'package:mobile_mvp/screens/common_widgets/fitness_text_field.dart';
@@ -18,7 +20,11 @@ class SignInContent extends StatelessWidget {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      color: ColorConstants.white,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage(PathConstants.signInBackground),
+            fit: BoxFit.fitWidth),
+      ),
       child: Stack(
         children: [
           _createMainData(context),
@@ -48,11 +54,14 @@ class SignInContent extends StatelessWidget {
         child: SizedBox(
           height: height - 30 - MediaQuery.of(context).padding.bottom,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 20),
-              _createHeader(),
+              _createTitle(),
+              const SizedBox(height: 25),
+              _createExternalLogin(context),
               const SizedBox(height: 50),
+              _createLoginText(),
+              const SizedBox(height: 20),
               _createForm(context),
               const SizedBox(height: 20),
               _createForgotPasswordButton(context),
@@ -72,7 +81,7 @@ class SignInContent extends StatelessWidget {
     return FitnessLoading();
   }
 
-  Widget _createHeader() {
+  Widget _createTitle() {
     return const Center(
       child: Text(
         TextConstants.signIn,
@@ -81,6 +90,57 @@ class SignInContent extends StatelessWidget {
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),
+      ),
+    );
+  }
+
+  Widget _createLoginText() {
+    return const Text(
+      TextConstants.loginWithEmail,
+      style: TextStyle(
+        color: ColorConstants.signUpGrey,
+        fontSize: 14,
+        fontWeight: FontWeight.bold,
+      ),
+    );
+  }
+
+  Widget _createExternalLogin(BuildContext context) {
+    final bloc = BlocProvider.of<SignInBloc>(context);
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: BlocBuilder<SignInBloc, SignInState>(
+        builder: (context, state) {
+          return Column(
+            children: [
+              ExternalLoginButton(
+                title: TextConstants.continueWithFacebook,
+                iconPath: PathConstants.facebookWhite,
+                backgroundColor: ColorConstants.blue,
+                titleColor: ColorConstants.white,
+                onTap: () {
+                  // TO DO: Add external login functionality for FB
+
+                  // FocusScope.of(context).unfocus();
+                  // bloc.add(SignUpTappedEvent());
+                },
+              ),
+              const SizedBox(height: 20),
+              ExternalLoginButton(
+                title: TextConstants.continueWithGoogle,
+                iconPath: PathConstants.google,
+                backgroundColor: ColorConstants.white,
+                titleColor: ColorConstants.loadingBlack,
+                onTap: () {
+                  // TO DO: Add external login functionality for Google
+
+                  // FocusScope.of(context).unfocus();
+                  // bloc.add(SignUpTappedEvent());
+                },
+              ),
+            ],
+          );
+        },
       ),
     );
   }
@@ -135,9 +195,8 @@ class SignInContent extends StatelessWidget {
         child: Text(
           TextConstants.forgotPassword,
           style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            color: ColorConstants.primaryColor,
+            fontSize: 14,
+            color: ColorConstants.textBlack,
           ),
         ),
       ),
@@ -179,14 +238,14 @@ class SignInContent extends StatelessWidget {
           text: TextConstants.doNotHaveAnAccount,
           style: const TextStyle(
             color: ColorConstants.textBlack,
-            fontSize: 18,
+            fontSize: 14,
           ),
           children: [
             TextSpan(
               text: " ${TextConstants.signUp}",
               style: const TextStyle(
                 color: ColorConstants.primaryColor,
-                fontSize: 18,
+                fontSize: 14,
                 fontWeight: FontWeight.bold,
               ),
               recognizer: TapGestureRecognizer()

@@ -9,10 +9,11 @@ import 'package:mobile_mvp/screens/common_widgets/external_login_button.dart';
 import 'package:mobile_mvp/screens/common_widgets/fitness_button.dart';
 import 'package:mobile_mvp/screens/common_widgets/fitness_loading.dart';
 import 'package:mobile_mvp/screens/common_widgets/fitness_text_field.dart';
-import 'package:mobile_mvp/screens/common_widgets/text_checkbox.dart';
 import 'package:mobile_mvp/screens/sign_up/bloc/signup_bloc.dart';
 
 class SignUpContent extends StatelessWidget {
+  const SignUpContent({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -52,25 +53,28 @@ class SignUpContent extends StatelessWidget {
   }
 
   Widget _createMainData(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(height: 20),
-            _createTitle(),
-            const SizedBox(height: 25),
-            _createExternalLogin(context),
-            const SizedBox(height: 50),
-            _createLoginText(),
-            const SizedBox(height: 20),
-            _createForm(context),
-            const SizedBox(height: 40),
-            _createSignUpButton(context),
-            // Spacer(),
-            const SizedBox(height: 40),
-            _createHaveAccountText(context),
-            const SizedBox(height: 30),
-          ],
+        child: SizedBox(
+          height: height - 30 - MediaQuery.of(context).padding.bottom,
+          child: Column(
+            children: [
+              const SizedBox(height: 20),
+              _createTitle(),
+              const SizedBox(height: 25),
+              _createExternalLogin(context),
+              const SizedBox(height: 50),
+              _createLoginText(),
+              const SizedBox(height: 20),
+              _createForm(context),
+              const SizedBox(height: 40),
+              _createSignUpButton(context),
+              const Spacer(),
+              _createHaveAccountText(context),
+              const SizedBox(height: 30),
+            ],
+          ),
         ),
       ),
     );
@@ -98,6 +102,46 @@ class SignUpContent extends StatelessWidget {
         color: ColorConstants.signUpGrey,
         fontSize: 14,
         fontWeight: FontWeight.bold,
+      ),
+    );
+  }
+
+  Widget _createExternalLogin(BuildContext context) {
+    final bloc = BlocProvider.of<SignUpBloc>(context);
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: BlocBuilder<SignUpBloc, SignUpState>(
+        builder: (context, state) {
+          return Column(
+            children: [
+              ExternalLoginButton(
+                title: TextConstants.continueWithFacebook,
+                iconPath: PathConstants.facebookWhite,
+                backgroundColor: ColorConstants.blue,
+                titleColor: ColorConstants.white,
+                onTap: () {
+                  // TO DO: Add external login functionality for FB
+
+                  // FocusScope.of(context).unfocus();
+                  // bloc.add(SignUpTappedEvent());
+                },
+              ),
+              const SizedBox(height: 20),
+              ExternalLoginButton(
+                title: TextConstants.continueWithGoogle,
+                iconPath: PathConstants.google,
+                backgroundColor: ColorConstants.white,
+                titleColor: ColorConstants.loadingBlack,
+                onTap: () {
+                  // TO DO: Add external login functionality for Google
+
+                  // FocusScope.of(context).unfocus();
+                  // bloc.add(SignUpTappedEvent());
+                },
+              ),
+            ],
+          );
+        },
       ),
     );
   }
@@ -191,46 +235,6 @@ class SignUpContent extends StatelessWidget {
               FocusScope.of(context).unfocus();
               bloc.add(SignUpTappedEvent());
             },
-          );
-        },
-      ),
-    );
-  }
-
-  Widget _createExternalLogin(BuildContext context) {
-    final bloc = BlocProvider.of<SignUpBloc>(context);
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: BlocBuilder<SignUpBloc, SignUpState>(
-        builder: (context, state) {
-          return Column(
-            children: [
-              ExternalLoginButton(
-                title: TextConstants.continueWithFacebook,
-                iconPath: PathConstants.facebookWhite,
-                backgroundColor: ColorConstants.blue,
-                titleColor: ColorConstants.white,
-                onTap: () {
-                  // TO DO: Add external login functionality for FB
-
-                  // FocusScope.of(context).unfocus();
-                  // bloc.add(SignUpTappedEvent());
-                },
-              ),
-              const SizedBox(height: 20),
-              ExternalLoginButton(
-                title: TextConstants.continueWithGoogle,
-                iconPath: PathConstants.google,
-                backgroundColor: ColorConstants.white,
-                titleColor: ColorConstants.loadingBlack,
-                onTap: () {
-                  // TO DO: Add external login functionality for Google
-
-                  // FocusScope.of(context).unfocus();
-                  // bloc.add(SignUpTappedEvent());
-                },
-              ),
-            ],
           );
         },
       ),

@@ -12,6 +12,8 @@ class PathConstants {
   static const String eye = 'assets/images/auth/eye_icon.png';
   static const String signUpBackground =
       'assets/images/auth/sign_up_background.png';
+  static const String signInBackground =
+      'assets/images/auth/sign_in_background.png';
 
   // Tabbar
   static const String home = 'assets/icons/home/home_icon.png';
