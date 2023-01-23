@@ -11,7 +11,7 @@ import 'package:mobile_mvp/screens/common_widgets/settings_container.dart';
 import 'package:mobile_mvp/screens/common_widgets/settings_textfield.dart';
 
 class ChangePasswordScreen extends StatefulWidget {
-  ChangePasswordScreen({Key? key}) : super(key: key);
+  const ChangePasswordScreen({Key? key}) : super(key: key);
 
   @override
   _ChangePasswordScreenState createState() => _ChangePasswordScreenState();
@@ -59,17 +59,18 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             currState is ChangePasswordProgress ||
             currState is ChangePasswordSuccess,
         builder: (context, state) {
-          if (state is ChangePasswordProgress)
+          if (state is ChangePasswordProgress) {
             return Stack(
                 children: [_editAccountContent(context), FitnessLoading()]);
+          }
           if (state is ChangePasswordError) {
-            WidgetsBinding.instance!.addPostFrameCallback((_) {
+            WidgetsBinding.instance.addPostFrameCallback((_) {
               ScaffoldMessenger.of(context)
                   .showSnackBar(SnackBar(content: Text(state.error)));
             });
           }
           if (state is ChangePasswordSuccess) {
-            WidgetsBinding.instance!.addPostFrameCallback((_) {
+            WidgetsBinding.instance.addPostFrameCallback((_) {
               ScaffoldMessenger.of(context)
                   .showSnackBar(SnackBar(content: Text(state.message)));
             });
@@ -83,7 +84,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   }
 
   Widget _editAccountContent(BuildContext context) {
-    ChangePasswordBloc _bloc = BlocProvider.of<ChangePasswordBloc>(context);
+    ChangePasswordBloc bloc = BlocProvider.of<ChangePasswordBloc>(context);
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: SingleChildScrollView(
@@ -132,7 +133,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                         _newPassController.text != _confirmPassController.text;
                   });
                   if (!(isNewPassInvalid || isConfirmPassInvalid)) {
-                    _bloc.add(ChangePassword(newPass: _newPassController.text));
+                    bloc.add(ChangePassword(newPass: _newPassController.text));
                   }
                 },
               ),

@@ -20,7 +20,7 @@ class NextForgotPasswordPageState extends SignInState {}
 
 class NextSignUpPageState extends SignInState {}
 
-class NextTabBarPageState extends SignInState {}
+class NextFinalOnboardingPageState extends SignInState {}
 
 class ErrorState extends SignInState {
   final String message;

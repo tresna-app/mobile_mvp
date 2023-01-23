@@ -10,6 +10,8 @@ import 'package:mobile_mvp/screens/onboarding/bloc/onboarding_bloc.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class OnboardingContent extends StatelessWidget {
+  const OnboardingContent({super.key});
+
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<OnboardingBloc>(context);

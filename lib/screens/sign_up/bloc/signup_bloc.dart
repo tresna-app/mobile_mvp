@@ -34,7 +34,7 @@ class SignUpBloc extends Bloc<SignupEvent, SignUpState> {
           yield LoadingState();
           await AuthService.signUp(emailController.text,
               passwordController.text, userNameController.text);
-          yield NextTabBarPageState();
+          yield NextFinalOnboardingPageState();
           print("Go to the next page");
         } catch (e) {
           yield ErrorState(message: e.toString());
@@ -50,15 +50,15 @@ class SignUpBloc extends Bloc<SignupEvent, SignUpState> {
   bool checkIfSignUpButtonEnabled() {
     return userNameController.text.isNotEmpty &&
         emailController.text.isNotEmpty &&
-        passwordController.text.isNotEmpty &&
-        confirmPasswordController.text.isNotEmpty;
+        passwordController.text.isNotEmpty;
+    //&& confirmPasswordController.text.isNotEmpty;
   }
 
   bool checkValidatorsOfTextField() {
     return ValidationService.username(userNameController.text) &&
         ValidationService.email(emailController.text) &&
-        ValidationService.password(passwordController.text) &&
-        ValidationService.confirmPassword(
-            passwordController.text, confirmPasswordController.text);
+        ValidationService.password(passwordController.text); // &&
+    // ValidationService.confirmPassword(
+    //     passwordController.text, confirmPasswordController.text);
   }
 }

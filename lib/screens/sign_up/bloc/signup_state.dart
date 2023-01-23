@@ -21,7 +21,7 @@ class ErrorState extends SignUpState {
   ErrorState({required this.message});
 }
 
-class NextTabBarPageState extends SignUpState {}
+class NextFinalOnboardingPageState extends SignUpState {}
 
 class NextSignInPageState extends SignUpState {}
 

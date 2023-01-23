@@ -12,6 +12,12 @@ class TextConstants {
   static const String onboarding3Description =
       "Connect with people going \nthrough similar life challenges.";
 
+  // Final Onboarding
+  static const String finalOnboardingTitle =
+      "We are so excited\n you are here.";
+  static const String finalOnboardingText =
+      "Find your Voice.\nFind your Community.";
+
   // External Logins
   static const String continueWithFacebook = "CONTINUE WITH FACEBOOK";
   static const String continueWithGoogle = "CONTINUE WITH GOOGLE";

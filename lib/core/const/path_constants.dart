@@ -1,12 +1,20 @@
 class PathConstants {
   // Onboarding
-  static const String tresnaPurpleLogo =
-      'assets/images/general/tresna_logo.png';
+  static const String purpleLogo = 'assets/images/general/tresna_logo.png';
   static const String vector = 'assets/images/onboarding/vector.png';
 
   static const String onboarding1 = 'assets/images/onboarding/onboarding.png';
   static const String onboarding2 = 'assets/images/onboarding/onboarding_2.png';
   static const String onboarding3 = 'assets/images/onboarding/onboarding_3.png';
+
+  // Final Onboarding
+  static const String whiteLogo = 'assets/images/general/white_logo.png';
+  static const String transparentLogo =
+      'assets/images/general/transparent_logo.png';
+  static const String finalOnboardingBackground =
+      'assets/images/final_onboarding/background.png';
+  static const String finalOnboarding =
+      'assets/images/final_onboarding/final_onboarding.png';
 
   // Auth
   static const String eye = 'assets/images/auth/eye_icon.png';

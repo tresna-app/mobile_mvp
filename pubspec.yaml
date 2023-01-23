@@ -101,6 +101,7 @@ flutter:
     - assets/images/exercises/
     - assets/images/general/
     - assets/images/onboarding/
+    - assets/images/final_onboarding/
     - assets/icons/home/
     - assets/icons/workouts/
     - assets/icons/social_networks/

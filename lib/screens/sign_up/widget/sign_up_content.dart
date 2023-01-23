@@ -34,12 +34,12 @@ class SignUpContent extends StatelessWidget {
             BlocBuilder<SignUpBloc, SignUpState>(
               buildWhen: (_, currState) =>
                   currState is LoadingState ||
-                  currState is NextTabBarPageState ||
+                  currState is NextFinalOnboardingPageState ||
                   currState is ErrorState,
               builder: (context, state) {
                 if (state is LoadingState) {
                   return _createLoading();
-                } else if (state is NextTabBarPageState ||
+                } else if (state is NextFinalOnboardingPageState ||
                     state is ErrorState) {
                   return const SizedBox();
                 }

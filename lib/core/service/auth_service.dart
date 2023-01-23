@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/services.dart';
 import 'package:mobile_mvp/core/extensions/exceptions.dart';
 
 class AuthService {
